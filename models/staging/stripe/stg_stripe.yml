@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_stripe__payments
+    columns:
+      - name: payment_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref("stg_jaffle_shop__orders")
+              field: order_id
