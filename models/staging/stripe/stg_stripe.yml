@@ -17,7 +17,7 @@ models:
               to: ref("stg_jaffle_shop__orders")
               field: order_id
       - name: payment_method
-        description: Payment method
+        description: '{{ doc("payment_method") }}'
         tests:
           - accepted_values:
               values:
