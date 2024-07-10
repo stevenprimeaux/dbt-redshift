@@ -2,14 +2,37 @@ version: 2
 
 models:
   - name: stg_stripe__payments
+    description: Staged payment data with standardized column names and amount in dollars.
     columns:
       - name: payment_id
+        description: Primary key for payment
         tests:
           - not_null
           - unique
       - name: order_id
+        description: Foreign key for order
         tests:
           - not_null
           - relationships:
               to: ref("stg_jaffle_shop__orders")
               field: order_id
+      - name: payment_method
+        description: '{{ doc("payment_method") }}'
+        tests:
+          - accepted_values:
+              values:
+                - bank_transfer
+                - coupon
+                - credit_card
+                - gift_card
+      - name: status
+        description: '{{ doc("payment_status") }}'
+        tests:
+          - accepted_values:
+              values:
+                - fail
+                - success
+      - name: amount
+        description: Payment amount converted to dollars
+      - name: created_at
+        description: Date payment was submitted

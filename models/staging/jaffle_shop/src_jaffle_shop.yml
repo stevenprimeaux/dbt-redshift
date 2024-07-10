@@ -6,12 +6,14 @@ sources:
     schema: jaffle_shop
     tables:
       - name: customers
+        description: Raw customer data from shopping app.
         columns:
           - name: id
             tests:
               - not_null
               - unique
       - name: orders
+        description: Raw order data from shopping app.
         columns:
           - name: id
             tests:
