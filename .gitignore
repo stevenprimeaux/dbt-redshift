@@ -1,5 +1,3 @@
 dbt_packages/
 logs/
-
-target/*
-!index.html
+target/
