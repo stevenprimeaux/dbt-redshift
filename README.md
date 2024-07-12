@@ -43,7 +43,7 @@ Definitions of accepted values were included in the dbt documentation as well us
 
 ### Marts Models
 
-With the source and staging models completed, models could now be added to fulfill analysis needs for specific stakeholders, like the Finance and Marketing teams in this example. One helpful heuristic for when to group a model under marts rather than staging is when joins are involved, since joins often involve adding new information to understand a particular dimension of an ongoing business process.
+With the source and staging models completed, models could now be added to fulfill analysis needs for specific stakeholders, like the Finance and Marketing teams in this example. One helpful heuristic for when to group a model under marts rather than staging is when joins are involved, since joins often involve adding new information to understand a dimension of an ongoing business process relevant to a particular stakeholder.
 
 First, an orders fact table was materialized as `fct_orders` to capture the essential measurements related to a given order (customer, date, amount), as well as foreign keys to access the various dimensions. Data tests were applied at this stage, with the foreign key relationship tests being particularly important for this table structure. And with `fct_orders` now available in the DAG, a customers dimension model could finally be constructed to summarize each customer's lifetime order history, including first order date, last order date, total number of orders, and total amount spent.
 
