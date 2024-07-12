@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Customer dimension of orders.
+    columns:
+      - name: customer_id
+        description: Primary key for customer
+        data_tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: Customer first name
+      - name: last_name
+        description: Customer last name
+      - name: first_order_date
+        description: Date first order was placed
+      - name: most_recent_order_date
+        description: Date most recent order was placed
+      - name: number_of_orders
+        description: Count of orders placed by the customer
+      - name: lifetime_value
+        description: Sum of successful payment amounts by the customer

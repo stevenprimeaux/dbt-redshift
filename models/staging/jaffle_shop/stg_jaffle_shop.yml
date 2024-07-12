@@ -6,7 +6,7 @@ models:
     columns:
       - name: customer_id
         description: Primary key for customer
-        tests:
+        data_tests:
           - not_null
           - unique
       - name: first_name
@@ -18,12 +18,12 @@ models:
     columns:
       - name: order_id
         description: Primary key for order
-        tests:
+        data_tests:
           - not_null
           - unique
       - name: customer_id
         description: Foreign key for customer
-        tests:
+        data_tests:
           - not_null
           - relationships:
               to: ref("stg_jaffle_shop__customers")
@@ -32,7 +32,7 @@ models:
         description: Date order was placed
       - name: status
         description: '{{ doc("order_status") }}'
-        tests:
+        data_tests:
           - accepted_values:
               values:
                 - placed
