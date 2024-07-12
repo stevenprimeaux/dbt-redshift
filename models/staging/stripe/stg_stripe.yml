@@ -6,19 +6,19 @@ models:
     columns:
       - name: payment_id
         description: Primary key for payment
-        tests:
+        data_tests:
           - not_null
           - unique
       - name: order_id
         description: Foreign key for order
-        tests:
+        data_tests:
           - not_null
           - relationships:
               to: ref("stg_jaffle_shop__orders")
               field: order_id
       - name: payment_method
         description: '{{ doc("payment_method") }}'
-        tests:
+        data_tests:
           - accepted_values:
               values:
                 - bank_transfer
@@ -27,7 +27,7 @@ models:
                 - gift_card
       - name: status
         description: '{{ doc("payment_status") }}'
-        tests:
+        data_tests:
           - accepted_values:
               values:
                 - fail
