@@ -1,8 +1,4 @@
-# DBT Fundamentals Course Project
-
-For a visualization built with Looker Studio using a dbt production schema deployed on AWS Redshift, please see:
-
-- [Total Amount by Customer](https://lookerstudio.google.com/reporting/a263be35-a243-4da4-b315-cdb1378b30d5)
+# DBT Integration with AWS Redshift
 
 ## Directory Structure
 
